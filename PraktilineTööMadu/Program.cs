@@ -11,21 +11,42 @@ namespace PraktilineTööMadu
     {
         static void Main(string[] args)
         {
-            // Set window size and player name
+            // Set window size
             int x = 80;
             int y = 30;
-            string writeName = "Write your name: ";
+            Console.SetWindowSize(x, y);
+            Console.Clear();
 
-            Console.SetCursorPosition(x / 2 - writeName.Length / 2, y / 2);
-            Console.Write(writeName);
-            Console.SetCursorPosition(x / 2, y / 2 + 1);
+            // Display initial message
+            string initialMessage = "You play as Hungry At sign -> @";
+            Console.SetCursorPosition(x / 2 - initialMessage.Length / 2, y / 2 - 2);
+            Console.WriteLine(initialMessage);
+
+            // Wait for space key to continue
+            Console.SetCursorPosition(x / 2 - 10, y / 2 + 2);
+            Console.WriteLine("Press SPACE to continue...");
+            while (Console.ReadKey(true).Key != ConsoleKey.Spacebar) { }
+
+            // Request player name
+            string writeName = "Write your name: ";
+            Console.Clear();
+            Console.SetCursorPosition(x / 2 - writeName.Length / 2, y / 2 - 2);
+            Console.WriteLine(writeName);
             string playerName = Console.ReadLine();
+            Console.Clear();
+
+            // Display rules
+            string writeRules = "You play as @. Eat $ to gain 1 point. Eat X to lose 1 point.";
+            Console.SetCursorPosition(x / 2 - writeRules.Length / 2, y / 2);
+            Console.WriteLine(writeRules);
+            Console.SetCursorPosition(x / 2 - 20, y / 2 + 2);
+            Console.WriteLine("Press SPACE to start the game...");
+            while (Console.ReadKey(true).Key != ConsoleKey.Spacebar) { }
             Console.Clear();
 
             // Game over setup
             int foodCounter = 0;
             string gameOver = "GAME OVER";
-            Console.SetWindowSize(x, y);
 
             // Walls
             Walls walls = new Walls(x, y);
