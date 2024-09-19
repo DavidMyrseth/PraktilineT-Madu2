@@ -1,0 +1,14 @@
+﻿dad:0--00:02
+erikbb:7--00:42
+gigan:12--01:17
+lennuk||6||00:31
+||Player Name:add||Point:9||Time:01:05
+||Player Name:dar||Point:0||Time:00:06
+||Player Name:fda||Point:0||Time:00:04
+||Player Name:hgf||Points:5||Time:00:58
+||Player Name:Vladislave||Points:9||Time:00:59
+||Player Name:dad||Points:2||Time:00:14
+||Player Name:Damian||Points:1||Time:00:10
+||Player Name:gog||Points:-2||Time:00:21
+||Player Name:rr||Points:0||Time:00:09
+||Player Name:bob||Points:0||Time:00:05
