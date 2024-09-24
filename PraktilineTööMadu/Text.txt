@@ -1,8 +1,4 @@
-﻿dad:0--00:02
-erikbb:7--00:42
-gigan:12--01:17
-lennuk||6||00:31
-||Player Name:add||Point:9||Time:01:05
+﻿||Player Name:add||Point:9||Time:01:05
 ||Player Name:dar||Point:0||Time:00:06
 ||Player Name:fda||Point:0||Time:00:04
 ||Player Name:hgf||Points:5||Time:00:58
@@ -22,3 +18,8 @@ lennuk||6||00:31
 ||Player Name:Goges||Points:1||Time:00:04
 ||Player Name:dak||Points:11||Time:02:11
 ||Player Name:adkua||Points:0||Time:00:13
+||Player Name:dawda ||Points:-1||Time:00:06
+||Player Name:dwdad||Points:0||Time:00:06
+||Player Name:daw ||Points:1||Time:00:08
+||Player Name:wdad||Points:0||Time:00:01
+||Player Name:dad||Points:0||Time:00:03
