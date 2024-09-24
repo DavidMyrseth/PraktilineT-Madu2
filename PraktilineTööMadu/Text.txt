@@ -18,3 +18,7 @@ lennuk||6||00:31
 ||Player Name:faggot||Points:0||Time:00:34
 ||Player Name:komber||Points:0||Time:00:12
 ||Player Name:feder||Points:0||Time:00:02
+||Player Name:???||Points:0||Time:00:04
+||Player Name:Goges||Points:1||Time:00:04
+||Player Name:dak||Points:11||Time:02:11
+||Player Name:adkua||Points:0||Time:00:13
