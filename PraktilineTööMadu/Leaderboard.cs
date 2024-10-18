@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PraktilineTööMadu
+﻿namespace PraktilineTööMadu
 {
     public class Leaderboard
     {
@@ -21,7 +15,7 @@ namespace PraktilineTööMadu
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error saving the file: {ex.Message}");
+                System.Console.WriteLine($"Error saving the file: {ex.Message}");
             }
         }
 
@@ -29,19 +23,19 @@ namespace PraktilineTööMadu
         public static void DisplayScores()
         {
             string file = @"..\..\..\Text.txt";
-            Console.WriteLine("\nPlayers and their scores:");
+            System.Console.WriteLine("\nPlayers and their scores:");
 
             if (File.Exists(file))
             {
                 string[] scores = File.ReadAllLines(file);
                 foreach (string score in scores)
                 {
-                    Console.WriteLine(score);
+                    System.Console.WriteLine(score);
                 }
             }
             else
             {
-                Console.WriteLine("No results yet.");
+                System.Console.WriteLine("No results yet.");
             }
         }
     }

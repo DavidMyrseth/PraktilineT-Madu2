@@ -10,22 +10,22 @@ namespace PraktilineTööMadu
         static void Main(string[] args)
         {
             // Настраиваем размеры окна консоли
-            SystemOptions.SetupWindow(80, 30);
+            Console.SetupWindow(80, 30);
 
             // Отображаем стартовое сообщение
-            SystemOptions.ShowStartMessage();
+            Console.ShowStartMessage();
 
             // Ожидание нажатия клавиши пробела для продолжения
-            SystemOptions.WaitForKeyPress(ConsoleKey.Spacebar);
+            Console.WaitForKeyPress(ConsoleKey.Spacebar);
 
             // Получение имени игрока
-            string playerName = SystemOptions.GetPlayerName();
+            string playerName = Console.GetPlayerName();
 
             // Отображаем правила игры
-            SystemOptions.ShowGameRules();
+            Console.ShowGameRules();
 
             // Ожидание нажатия пробела для старта игры
-            SystemOptions.WaitForKeyPress(ConsoleKey.Spacebar);
+            Console.WaitForKeyPress(ConsoleKey.Spacebar);
 
             // Запуск игры с полученным именем игрока
 
@@ -33,22 +33,22 @@ namespace PraktilineTööMadu
             int foodCounter = 0;
             // Флаг для проверки состояния игры (закончена или нет)
             bool gameOver = false;
-            
+
             // Создание объекта стен для игры
-            Walls walls = new Walls(Console.WindowWidth, Console.WindowHeight);
+            Walls walls = new Walls(System.Console.WindowWidth, System.Console.WindowHeight);
             // Инициализация змейки
-            Snake snake = SystemOptions.InitializeSnake();
-            
+            Snake snake = Snake.InitializeSnake();
+
             // Создание объектов для хорошей и плохой еды
-            FoodCreator goodFoodCreator = new FoodCreator(Console.WindowWidth, Console.WindowHeight, '$');
-            FoodCreator badFoodCreator = new FoodCreator(Console.WindowWidth, Console.WindowHeight, 'X');
+            FoodCreator goodFoodCreator = new FoodCreator(System.Console.WindowWidth, System.Console.WindowHeight, '$');
+            FoodCreator badFoodCreator = new FoodCreator(System.Console.WindowWidth, System.Console.WindowHeight, 'X');
             
             // Создание первой позиции хорошей и плохой еды
             Point goodFood = goodFoodCreator.CreateFood();
             Point badFood = badFoodCreator.CreateFood();
             
             // Отрисовка стен, змейки и еды на экране
-            SystemOptions.DrawInitialGameObjects(walls, snake, goodFood, badFood);
+            Food.DrawInitialGameObjects(walls, snake, goodFood, badFood);
             
             // Инициализация таймера для отслеживания времени игры
             Stopwatch stopwatch = new Stopwatch();
@@ -58,25 +58,25 @@ namespace PraktilineTööMadu
             while (true)
             {
                 // Проверяем, не завершилась ли игра (столкновение со стеной или хвостом змеи)
-                gameOver = SystemOptions.CheckGameOver(snake, walls);
+                gameOver = Console.CheckGameOver(snake, walls);
 
 
                 if (!gameOver)
                 {
                     // Обрабатываем поедание еды змейкой
-                    foodCounter = SystemOptions.HandleFoodConsumption(snake, goodFoodCreator, badFoodCreator, ref goodFood, ref badFood, foodCounter);
+                    foodCounter = Food.HandleFoodConsumption(snake, goodFoodCreator, badFoodCreator, ref goodFood, ref badFood, foodCounter);
                     // Движение змейки
                     snake.Move();
 
                     // Отображаем текущие результаты игры (счет и время)
-                    SystemOptions.DisplayGameStats(foodCounter, stopwatch.Elapsed);
+                    Console.DisplayGameStats(foodCounter, stopwatch.Elapsed);
 
                     // Приостанавливаем выполнение на 75 миллисекунд для анимации змейки
                     // нужен для того чтобы змейка не обновлялась каждую секунду
                     Thread.Sleep(75);
 
                     // Обрабатываем нажатие клавиш для управления змейкой
-                    SystemOptions.HandleKeyPress(snake);
+                    Console.HandleKeyPress(snake);
                 }
                 else 
                 { 
@@ -84,7 +84,7 @@ namespace PraktilineTööMadu
                 }
             }
             // Завершаем игру: сохраняем результат, отображаем сообщение
-            SystemOptions.EndGame(playerName, foodCounter, stopwatch);
+            Console.EndGame(playerName, foodCounter, stopwatch);
         }
     }
 }

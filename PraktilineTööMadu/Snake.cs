@@ -1,13 +1,4 @@
-﻿using PraktilineTööMadu;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-
-namespace PraktilineTööMadu
+﻿namespace PraktilineTööMadu
 {
     internal class Snake : Figure
     {
@@ -74,6 +65,18 @@ namespace PraktilineTööMadu
             }
             else
                 return false;
+        }
+        public static Snake InitializeSnake()
+        {
+            // Начальная точка для змейки
+            Point startPoint = new Point(4, 5, '@');
+            // Инициализация змейки с указанной длиной и направлением
+            Snake snake = new Snake(startPoint, 4, Direction.RIGHT);
+            // Задаем цвет змейки
+            System.Console.ForegroundColor = ConsoleColor.Green;
+            // Отрисовываем змейку на экране
+            snake.Draw();
+            return snake; // Возвращаем объект змейки
         }
     }
 }

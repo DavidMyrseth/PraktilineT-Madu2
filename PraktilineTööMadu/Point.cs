@@ -1,11 +1,4 @@
-﻿using PraktilineTööMadu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PraktilineTööMadu
+﻿namespace PraktilineTööMadu
 {
     internal class Point
     {
@@ -56,8 +49,8 @@ namespace PraktilineTööMadu
 
         public void Draw(int x, int y, char sym)
         {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
+            System.Console.SetCursorPosition(x, y);
+            System.Console.Write(sym);
         }
 
         public void Clear()
